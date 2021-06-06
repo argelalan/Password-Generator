@@ -10,8 +10,8 @@ def generate_password():
     Print out the password.
     """
     while True:
-        valid_nums = list(range(1, 95))
-        valid_nums = str(valid_nums)
+        valid_length = list(range(1, 95))
+        valid_length = str(valid_nums)
 
         length = input('Enter a password length:\n(The limit is 94): ')
 
@@ -22,7 +22,7 @@ def generate_password():
 
         combination = upper + lower + num + symbols
 
-        if length in valid_nums:
+        if length in valid_length:
             length = int(length)
 
             random_combination = random.sample(combination, length)
@@ -33,7 +33,7 @@ def generate_password():
         elif length == 'q':
             break
         else:
-            print('*** Invalid syntax')
+            print('*** Invalid syntax ***')
 
 
 def generate_passphrase():
