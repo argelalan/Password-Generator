@@ -11,7 +11,7 @@ def generate_password():
     """
     while True:
         valid_length = list(range(1, 95))
-        valid_length = str(valid_nums)
+        valid_length = str(valid_length)
 
         length = input('Enter a password length:\n(The limit is 94): ')
 
