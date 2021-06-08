@@ -1,4 +1,4 @@
-from random_word import RandomWords
+rom random_word import RandomWords
 import random
 
 
@@ -22,33 +22,35 @@ def limit_length():
             print('*** Invalid syntax ***')
 
 
-def get_word_spacer(flag):
+def get_word_spacer(word_limit):
     """
     Return a word spacer as long as the word limit exists and the user
     doesn't want to quit.
     """
-    while flag:
+    while word_limit:
         spacer = input('Enter a symbol to separate the words in your passphrase'
                        '\n(Hit space bar and enter for no symbols): ')
         if spacer == 'q':
-            flag = False
+            word_limit = False
         else:
             return spacer
 
 
-def get_word_case(flag, limit):
+def get_word_case(spacer, limit):
     """
-    Print a passphrase in a preferred word case, of a preferred
-    length, and with a preferred word spacer as long the user doesn't
-    the word spacer exists, the user chooses a valid word case option,
-    and the user doesn't want to quit.
+    Generate a list of random words.
+    Generate a random combination of a preferred number of those words.
+    Join that combination with a preferred word spacer.
+    Finally, print the result as a passphrase in a preferred word case
+    as lon as the word spacer exists, the user chooses a valid word
+    case option, and the user doesn't want to quit.
     """
-    while flag:
+    while spacer:
         rw = RandomWords()
         words = rw.get_random_words()
 
         random_combination = random.sample(words, limit)
-        passphrase = flag.join(random_combination)
+        passphrase = spacer.join(random_combination)
 
         case = input('1. Upper\n2. Lower\n3. Title'
                      '\nEnter a number for a case: ')
@@ -71,9 +73,10 @@ def get_word_case(flag, limit):
 def generate_passphrase():
     """
     Generate a passphrase with a word limit, a word spacer to
-    separate the words, and a preferred word case.
+    separate the words, and a preferred word case formed of randomized
+    words.
     """
     length = limit_length()
-    spacer = get_word_spacer(length)
+    word_spacer = get_word_spacer(length)
 
-    get_word_case(spacer, length)
+    get_word_case(word_spacer, length)
