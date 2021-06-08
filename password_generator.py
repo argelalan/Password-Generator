@@ -1,5 +1,5 @@
 from passwords import generate_password as gpw
-from passwords import generate_passphrase as gpp
+from passphrases import generate_passphrase as gpp
 
 
 def password_generator():
