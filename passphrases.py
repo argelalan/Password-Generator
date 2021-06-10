@@ -1,4 +1,4 @@
-rom random_word import RandomWords
+from random_word import RandomWords
 import random
 
 
