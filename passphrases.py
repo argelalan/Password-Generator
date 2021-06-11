@@ -42,7 +42,7 @@ def get_word_case(spacer, limit):
     Generate a random combination of a preferred number of those words.
     Join that combination with a preferred word spacer.
     Finally, print the result as a passphrase in a preferred word case
-    as lon as the word spacer exists, the user chooses a valid word
+    as long as the word spacer exists, the user chooses a valid word
     case option, and the user doesn't want to quit.
     """
     while spacer:
@@ -72,9 +72,9 @@ def get_word_case(spacer, limit):
 
 def generate_passphrase():
     """
-    Generate a passphrase with a word limit, a word spacer to
-    separate the words, and a preferred word case formed of randomized
-    words.
+    Generate a passphrase formed of randomized
+    words with a word limit, a word spacer to
+    separate the words, and a preferred word case.
     """
     length = limit_length()
     word_spacer = get_word_spacer(length)
